@@ -1,4 +1,4 @@
-package com.s.g.tecnologa.course.resorces;
+package com.s.g.tecnologa.course.resources;
 
 import java.util.List;
 
@@ -9,26 +9,26 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.s.g.tecnologa.course.entities.User;
-import com.s.g.tecnologa.course.services.UserService;
+import com.s.g.tecnologa.course.entities.Order;
+import com.s.g.tecnologa.course.services.OrderService;
 
 @RestController
-@RequestMapping(value = "/users")
-public class UserResource {
+@RequestMapping(value = "/orders")
+public class OrderResource {
 	
 	@Autowired
-	private UserService service;
+	private OrderService service;
 	
 	@GetMapping
 	//end point
-	public ResponseEntity<List<User>> findAll(){
-		List<User> list = service.fimdAll();
+	public ResponseEntity<List<Order>> findAll(){
+		List<Order> list = service.fimdAll();
 		return ResponseEntity.ok().body(list);
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<User> findById(@PathVariable Long id){
-		User obj =  service.findById(id);
+	public ResponseEntity<Order> findById(@PathVariable Long id){
+		Order obj =  service.findById(id);
 		return ResponseEntity.ok().body(obj);
 		
 	}
