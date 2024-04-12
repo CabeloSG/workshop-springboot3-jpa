@@ -2,6 +2,7 @@ package com.s.g.tecnologa.course.entities;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.s.g.tecnologa.course.entities.pk.OrderItemPK;
 
 import jakarta.persistence.EmbeddedId;
@@ -30,6 +31,7 @@ public class OrderItem implements Serializable{
 		this.quantity = quantity;
 		this.price = price;
 	}
+	
 	
 	public Order getOrder() {
 		return id.getOrder();
